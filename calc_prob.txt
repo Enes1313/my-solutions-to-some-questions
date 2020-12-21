@@ -1,0 +1,48 @@
+Olay
+
+8 bit (veri) + 1 bit (kontrol) toplam 9 bitlik paketler vericiden alıcıya iletilmektedir.
+
+Paket Yapısı
+
+9. Bit olan kontrol biti, Veriyi temsil eden 8 bit içindeki 1'lerin sayısı tek ise 1, çift 
+ise 0 değerini almaktadır. Örneğin, toplam gönderilecek 9 bit aşağıdaki gibi olabilir : 
+010011001
+
+Eğer yukarıdaki 9 bitin en sağındaki biti yani 9.bit 0 olsaydı, alıcı tarafta yapılacak 
+kontrolden bu paket geçemeyecekti. Çünkü alıcı, 8 biti kullanarak 9. bitin ne olması 
+gerektiğini bilecekti. 
+
+Verilen
+
+Bir bitin hatalı (1 ise 0, 0 ise 1) gönderilme ihtimali 1/N olduğu bilinmektedir. Yani 
+verici tarafında 1 olduğu bilinen bir bit iletişimde herhangi bir sebepten ötürü alıcıya 
+0 olarak geçme ihtimali 1/N olarak verilmiştir.
+
+
+Sorular
+
+1- Kontrol bitinin hatalı gönderilme ihtimali yok kabul edilirse herhangi bir 9 bitlik paket 
+alıcı tarafta kontrolden geçtikten sonra, alıcı-vericideki verinin aynı olmama olasılığı nedir? 
+(N'ye bağlı bir ifade olmalı)
+
+2- Kontrol bitinin de hatalı gönderilme ihtimali var (yine 1/N) kabul edilirse herhangi bir 9 
+bitlik paket alıcı tarafta kontrolden geçtikten sonra, alıcı-vericideki verinin aynı olmama 
+olasılığı nedir? (N'ye bağlı bir ifade olmalı)
+
+
+Cevaplar
+
+1-
+
+(8, 2) * (1/N)^2 * (1 - 1/N)^6 +
+(8, 4) * (1/N)^4 * (1 - 1/N)^4 +
+(8, 6) * (1/N)^6 * (1 - 1/N)^2 +
+(8, 8) * (1/N)^8 * (1 - 1/N)^0
+
+2- 
+
+(9, 2) * (1/N)^2 * (1 - 1/N)^7 +
+(9, 4) * (1/N)^4 * (1 - 1/N)^5 +
+(9, 6) * (1/N)^6 * (1 - 1/N)^3 +
+(9, 8) * (1/N)^8 * (1 - 1/N)^1
+
