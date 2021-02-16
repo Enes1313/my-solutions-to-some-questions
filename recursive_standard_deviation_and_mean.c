@@ -23,10 +23,9 @@ double std_array(const int arr[], double *mean, int n, int index)
 
 	if (index != 0) return sum2power;
 
-	double t = *mean;
 	*mean /= n;
 
-	return sqrt((sum2power - 2 * t * (*mean) + n * (*mean) * (*mean)) / (n - 1));
+	return sqrt((sum2power - n * (*mean) * (*mean)) / (n - 1));
 }
 
 int main()
