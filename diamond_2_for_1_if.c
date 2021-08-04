@@ -4,14 +4,12 @@
 int main()
 {
 	int n, x, y;
-
-    do{
-        printf("Enter the odd positive number : ");
-        scanf("%d", &n);
-    } while(n < 0 || n % 2 == 0);
-
-	kontrol(n);
 	
+	do {
+		printf("Enter the odd positive number : ");
+		scanf("%d", &n);
+	} while (n < 0 || n % 2 == 0);
+
 	for (x = 1; x <= n; x++)
 	{
 		for (y = 1; y <= n; y++)
